@@ -31,9 +31,9 @@
   </head>
   <body>
     <!---Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-      <div class="container-fluid" id="nav-main">
-        <a class="logo" href="#"><img src="img/logo2.png" alt="logo" /></a>
+    <nav id="nav-main" class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid" >
+        <a id="logo" class="logo" href="./"><img src="img/logo2.png" alt="logo" /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -76,7 +76,12 @@
               <div class="carousel-item active">
                 <img src="img/pizza1.jpg" alt="background image"  class="img-fluid"/>
                 <div class="carousel-caption">
-                  <br />
+                  <div>
+
+
+
+                    
+                  </div>
                     <button type="button" class="btn btn-primary btn-lg">
                       ORDER NOW !!
                     </button>
@@ -97,14 +102,60 @@
       </div>
     </div>
     <!--section 3-->
-    <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1>order now</h1>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <div id="ui">
+              <h1 class="text-center" style="font-weight: 900;">Enter Your Order Here</h1>
+              <form action="#" class="form-group" id="myForm">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <select class="form-control form-control-lg">
+                      <option value="" disabled selected>--- Size ---</option>
+                      <option value="small">Small</option>
+                      <option value="medium">Medium</option>
+                      <option value="Large">Large</option>
+                    </select>                
+                   </div>
+                   <div class="col-lg-4">
+                    <select class="form-control form-control-lg">
+                      <option value="" disabled selected>---Topping---</option>
+                      <option value="Pepperoni">Pepperoni</option>
+                      <option value="Pinapple">Pinapple</option>
+                      <option value="Mushrooms">Mushrooms</option>
+                      <option value="Beef">Beef</option>
+                      <option value="Onion">Onion</option>
+                      <option value="Bacon">Bacon</option>
+                    </select>                
+                   </div>
+                  <div class="col-lg-4">
+                    <select class="form-control form-control-lg">
+                      <option value="" disabled selected>-- Crust --</option>
+                      <option value="Crispy">Crispy</option>
+                      <option value="Stuffed">Stuffed</option>
+                      <option value="Gluten-Free">Gluten-Free</option>
+                    </select>                
+                   </div>
+                </div>
+                <br />
+                <br />
+                <button
+                  onclick="myFunction()"
+                  type="button"
+                  id="submit"
+                  value="Submit"
+                  name="submit"
+                  class="btn btn-primary btn-block btn-lg"
+                >
+                  Place Order
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3"></div>
+        </div>
       </div>
-      
-    </div>
-
-    </div>
   </body>
 </html>
