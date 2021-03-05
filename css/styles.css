@@ -11,8 +11,12 @@ body {
 .selector {
   background-color: transparent;
   border-color: white;
+
   color: black;
 }
 
-#logo {
+#radio {
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
 }
