@@ -5,4 +5,14 @@ $(document).ready(function(){
     $("#myModal").modal();
   }
   });
+  $("#checkout").click(function(){
+    var deliveryAddress = $("input#inputAddress").val();
+    alert(' your order will be delivered to ' + deliveryAddress);
+
+  });
+
+
+
+
+
 });
