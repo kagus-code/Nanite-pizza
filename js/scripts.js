@@ -23,6 +23,49 @@ pizza.prototype.price = function(){
 //user logic 
 $(document).ready(function(){
   $("#myBtn").click(function(){
+    var size = parseInt( $("#size").val());
+    var crust = parseInt($("#crust").val());
+    var topping = $("#topping").val();
+    var toppingSize;
+    
+
+    if (size===450 && topping =='Pepperoni'){
+      toppingSize = 100;
+    }  else if (size===550 && topping =='Pepperoni'){
+      toppingSize = 150;
+    }else if (size===1000 && topping == 'Pepperoni'){
+      toppingSize = 200;
+    }else if (size===450 && topping =='Beef'){
+      toppingSize = 200;
+    }else if (size===550 && topping =='Beef'){
+      toppingSize = 250;
+    }else if (size===1000 && topping == 'Beef'){
+      toppingSize = 300;
+    }else if (size===450 && topping =='Onion'){
+      toppingSize = 50;
+    }else if (size===550 && topping =='Onion'){
+      toppingSize = 100;
+    }else if (size===1000 && topping=== 'Onion'){
+      toppingSize = 150;
+    }else if (size===450 && topping == 'Bacon'){
+      toppingSize = 70;
+    }else if (size===550 && topping == 'Bacon'){
+      toppingSize = 120;
+    }
+    else if (size===550 && topping == 'Bacon'){
+      toppingSize = 250;
+    }
+    else {
+      toppingSize = 0;
+      alert('Your pizza will have NO topping')
+
+    }
+    var totalPrice =size + crust + toppingSize ;
+    alert(totalPrice);
+    
+  });
+
+/*
    var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
     if (selectedRadio==="delivery"){
        $("#myModal").modal();
@@ -30,6 +73,8 @@ $(document).ready(function(){
     else {
       alert("your order will be processed shortly")
     };
+
+
     
   });
   $("#checkout").click(function(){
@@ -40,7 +85,7 @@ $(document).ready(function(){
   });
 
 
-
+*/
 
 
 });

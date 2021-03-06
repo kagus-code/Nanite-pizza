@@ -112,31 +112,29 @@
               <form action="#" class="form-group" id="myForm">
                 <div class="row">
                   <div  class="col-lg-4">
-                    <select  class="form-control form-control-lg selector" required>
+                    <select  id="size" class="form-control form-control-lg selector" required>
                       <option value="" disabled selected>--- Size ---</option>
-                      <option value="450">Small</option>
-                      <option value="550">Medium</option>
-                      <option value="1000">Large</option>
+                      <option value= 450 >Small</option>
+                      <option value= 550 >Medium</option>
+                      <option value= 1000 >Large</option>
                     </select>                
                    </div>
                    <div class="col-lg-4">
-                    <select class="form-control form-control-lg selector" required>
+                    <select id="topping" class="form-control form-control-lg selector" required>
                       <option value="" disabled selected>---Topping---</option>
                       <option value="Pepperoni">Pepperoni</option>
-                      <option value="Pinapple">Pinapple</option>
-                      <option value="Mushrooms">Mushrooms</option>
                       <option value="Beef">Beef</option>
                       <option value="Onion">Onion</option>
                       <option value="Bacon">Bacon</option>
                     </select>                
                    </div>
                   <div class="col-lg-4">
-                    <select class="form-control form-control-lg selector" required>
+                    <select id="crust" class="form-control form-control-lg selector" required>
                       <option value="" disabled selected>-- Crust --</option>
-                      <option value="100">Crispy</option>
-                      <option value="150">Stuffed</option>
-                      <option value="250">Gluten-Free</option>
-                      <option value="200">Flat-bread</option>
+                      <option value= 100 >Crispy</option>
+                      <option value= 150 >Stuffed</option>
+                      <option value= 250 >Gluten-Free</option>
+                      <option value= 200 >Flat-bread</option>
                     </select>                
                    </div>
                 </div> <br>
@@ -156,7 +154,7 @@
                 <br />
                 <br />
                 <button
-                  type="submit"
+                  type="button"
                   id="myBtn"
                   value="Submit"
                   name="submit"
