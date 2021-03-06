@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap");
+
 body {
+  font-family: "Titillium Web", sans-serif;
   background-image: url(/img/background.jpg);
   background-size: cover;
   background-position: center center;
@@ -14,9 +17,18 @@ body {
 
   color: black;
 }
-
 #radio {
   width: 2em;
   height: 2em;
-  background-color: transparent;
+}
+.modal-header,
+h4,
+.close {
+  background-color: #5cb85c;
+  color: white !important;
+  text-align: center;
+  font-size: 30px;
+}
+.modal-footer {
+  background-color: #f9f9f9;
 }

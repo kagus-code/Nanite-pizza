@@ -158,7 +158,7 @@
                 <button
                   onclick="myFunction()"
                   type="button"
-                  id="submit"
+                  id="myBtn"
                   value="Submit"
                   name="submit"
                   class="btn btn-primary btn-block btn-lg"
@@ -171,5 +171,38 @@
           <div class="col-lg-3"></div>
         </div>
       </div>
+<!----->
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <a href="#"> <h1>Your Delivery Fee is Ksh100</h1><img src="/img/delivery.png" alt=""></a>
+      </div>
+      <div class="modal-body" style="padding:40px 50px;">
+        <form role="form">
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+          </div>
+          <div class="form-group">
+            <label for="quantity"><span></span>Quantity</label>
+            <input type="number"  id="quantity" placeholder="Number of orders" min="1">
+          </div>
+            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>CHECK OUT </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+<!----->      
   </body>
 </html>
