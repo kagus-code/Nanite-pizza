@@ -1,3 +1,26 @@
+//business logic 
+function pizza (size,topping,crust){
+  this.price = size;
+  this.topping = topping;
+  this.crust =crust;
+}
+pizza.prototype.price = function(){
+  var total = this.price + this.topping + this.crust;
+  return total;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//user logic 
 $(document).ready(function(){
   $("#myBtn").click(function(){
    var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
