@@ -36,3 +36,11 @@ h4,
   cursor: pointer;
   color: #0088cc;
 }
+.card {
+  width: 35rem;
+}
+@media screen and (max-width: 793px) {
+  .card {
+    width: 21rem;
+  }
+}
