@@ -17,15 +17,9 @@ function resetFields() {
   document.getElementById('qty').value='';
   $('input[name="inlineRadioOptions"]').prop('checked', false);
 }
-
-
-
-
-
-
-
-
-
+function reloadPage(){
+  location.reload(true);
+}
 //user logic 
 $(document).ready(function(){
   $("#myBtn").click(function(){
@@ -35,18 +29,14 @@ $(document).ready(function(){
     }
     else if (selectedRadio==='pick-up'){
       alert(" Pay a total of Ksh " + totalPricePickup + " and your PickUp order will be processed shortly" );
-    }
-    
+    } 
   });
-
     $("#checkout").click(function(event){
-
        var sizeValue= parseInt( $("#size").val());
- var toppingText = $("#topping").val();
- var crustValue= parseInt($("#crust").val());
- var sizeText;
- var crustText;
-
+       var toppingText = $("#topping").val();
+       var crustValue= parseInt($("#crust").val());
+       var sizeText;
+       var crustText;
  if (sizeValue===450 ){
    sizeText = 'small';
  }else if (sizeValue===550){
@@ -63,8 +53,6 @@ $(document).ready(function(){
 } else if (crustValue===200){
   crustText = 'flat-bread'
 }
-alert(crustText + sizeText + toppingText);
-
     var size = parseInt( $("#size").val());
     var crust = parseInt($("#crust").val());
     var topping = $("#topping").val();
@@ -100,55 +88,15 @@ alert(crustText + sizeText + toppingText);
       alert('Please select Valid option');
 
     }
-    var totalPrice = new pizza(size, toppingSize, crust); 
-    var totalPickup= totalPrice.price();
-    var totalPricePickup = totalPickup - 100;
-   
-
+      var totalPrice = new pizza(size, toppingSize, crust); 
+      var totalPickup= totalPrice.price();
+      var totalPricePickup = totalPickup - 100;
       var deliveryAddress = $("input#inputAddress").val();
       var quantity = parseInt( $("input#qty").val());
       var totalPriceDelivery = totalPickup * quantity
       alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPriceDelivery);
-
       $("ul#new-order").append("<li><span class='contact'>" +sizeText+ "," + toppingText +","+crustText+ " ----X " + quantity + 
         "----------"   +  'Ksh.' +totalPriceDelivery + "</span></li>");
-      
-
-        resetFields();
-      
-        
-
-      
-
+        resetFields(); 
     });
-
-    
-  
-
-  
-
-
-/*
-   var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
-    if (selectedRadio==="delivery"){
-       $("#myModal").modal();
-    }
-    else {
-      alert(" your order will be processed shortly")
-    };
-
-
-    
-  });
-  $("#checkout").click(function(){
-    var deliveryAddress = $("input#inputAddress").val();
-    var quantity = $("input#qty").val();
-    alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress);
-
-  });
-
-
-*/
-
-
 });
