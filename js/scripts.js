@@ -15,7 +15,7 @@ function resetFields() {
   document.getElementById('crust').value='';
   document.getElementById('inputAddress').value='';
   document.getElementById('qty').value='';
-
+  $('input[name="inlineRadioOptions"]').prop('checked', false);
 }
 
 
@@ -29,7 +29,19 @@ function resetFields() {
 //user logic 
 $(document).ready(function(){
   $("#myBtn").click(function(){
-    var sizeValue= parseInt( $("#size").val());
+    var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
+    if (selectedRadio==="delivery"){
+       $("#myModal").modal(); 
+    }
+    else if (selectedRadio==='pick-up'){
+      alert(" Pay a total of Ksh " + totalPricePickup + " and your PickUp order will be processed shortly" );
+    }
+    
+  });
+
+    $("#checkout").click(function(event){
+
+       var sizeValue= parseInt( $("#size").val());
  var toppingText = $("#topping").val();
  var crustValue= parseInt($("#crust").val());
  var sizeText;
@@ -91,17 +103,8 @@ alert(crustText + sizeText + toppingText);
     var totalPrice = new pizza(size, toppingSize, crust); 
     var totalPickup= totalPrice.price();
     var totalPricePickup = totalPickup - 100;
-    var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
-    if (selectedRadio==="delivery"){
-       $("#myModal").modal(); 
-    }
-    else if (selectedRadio==='pick-up'){
-      alert(" Pay a total of Ksh " + totalPricePickup + " and your PickUp order will be processed shortly" );
-    }
-    
-    
+   
 
-    $("#checkout").click(function(event){
       var deliveryAddress = $("input#inputAddress").val();
       var quantity = parseInt( $("input#qty").val());
       var totalPriceDelivery = totalPickup * quantity
@@ -109,13 +112,18 @@ alert(crustText + sizeText + toppingText);
 
       $("ul#new-order").append("<li><span class='contact'>" +sizeText+ "," + toppingText +","+crustText+ " X " + quantity + 
         "----------"   +   totalPriceDelivery + "</span></li>");
-        resetFields(); 
+      
+
+        resetFields();
+      
+        
+
       
 
     });
 
     
-  });
+  
 
   
 
