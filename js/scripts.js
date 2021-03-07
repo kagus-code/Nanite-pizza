@@ -9,9 +9,14 @@ pizza.prototype.price = function(){
   var total = this.size + this.topping + this.crust + 100 ;
   return total;
 };
+function resetFields() {
+  document.getElementById('size').value=''; 
+  document.getElementById('topping').value=''; 
+  document.getElementById('crust').value='';
+  document.getElementById('inputAddress').value='';
+  document.getElementById('qty').value='';
 
-
-
+}
 
 
 
@@ -96,12 +101,15 @@ alert(crustText + sizeText + toppingText);
     
     
 
-    $("#checkout").click(function(){
+    $("#checkout").click(function(event){
       var deliveryAddress = $("input#inputAddress").val();
       var quantity = parseInt( $("input#qty").val());
       var totalPriceDelivery = totalPickup * quantity
       alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPriceDelivery);
-      
+
+      $("ul#new-order").append("<li><span class='contact'>" +sizeText+ "," + toppingText +","+crustText+ " X " + quantity + 
+        "----------"   +   totalPriceDelivery + "</span></li>");
+        resetFields(); 
       
 
     });
