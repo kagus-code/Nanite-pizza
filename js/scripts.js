@@ -88,15 +88,16 @@ $(document).ready(function(){
       alert('Please select Valid option');
 
     }
-      var totalPrice = new pizza(size, toppingSize, crust); 
-      var totalPickup= totalPrice.price();
-      var totalPricePickup = totalPickup - 100;
+    var totalPrice = new pizza(size, toppingSize, crust); 
+    var totalPickup= totalPrice.price();
+    var totalPricePickup = totalPickup - 100;
       var deliveryAddress = $("input#inputAddress").val();
       var quantity = parseInt( $("input#qty").val());
       var totalPriceDelivery = totalPickup * quantity
       alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPriceDelivery);
       $("ul#new-order").append("<li><span class='contact'>" +sizeText+ "," + toppingText +","+crustText+ " ----X " + quantity + 
         "----------"   +  'Ksh.' +totalPriceDelivery + "</span></li>");
-        resetFields(); 
+
+        resetFields();
     });
 });
