@@ -56,27 +56,27 @@ $(document).ready(function(){
     }
     else {
       toppingSize = 0;
-      alert('Your pizza will have NO topping');
+      alert('Please select Valid option');
 
     }
     var totalPrice = new pizza(size, toppingSize, crust); 
     var totalPickup= totalPrice.price();
-    var  totalPricePickup = totalPickup - 100;
-
+    var totalPricePickup = totalPickup - 100;
     var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
     if (selectedRadio==="delivery"){
        $("#myModal").modal(); 
     }
-    else {
+    else if (selectedRadio==='pick-up'){
       alert(" Pay a total of Ksh " + totalPricePickup + " and your PickUp order will be processed shortly" );
-    };
-
+    }
+    
+    
 
     $("#checkout").click(function(){
       var deliveryAddress = $("input#inputAddress").val();
-      var quantity = $("input#qty").val();
-      alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPrice.price());
-  
+      var quantity = parseInt( $("input#qty").val());
+      var totalPriceDelivery = totalPickup * quantity
+      alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPriceDelivery);
     });
 
     
