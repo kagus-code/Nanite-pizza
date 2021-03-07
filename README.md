@@ -25,6 +25,8 @@ of pizzas with one or more toppings.
 
 ## link to live site on GitHub Pages
 
+https://kagus-code.github.io/Nanite-pizza/
+
 ## Support and contact details
 
 | Eston | ekagwima745@gmail.com |
