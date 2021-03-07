@@ -43,4 +43,7 @@ h4,
   .card {
     width: 21rem;
   }
+  #new-order {
+    font-size: small;
+  }
 }
