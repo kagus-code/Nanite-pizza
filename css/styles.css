@@ -38,6 +38,9 @@ h4,
 .card {
   width: 35rem;
 }
+.tblcls {
+  display: none;
+}
 @media screen and (max-width: 793px) {
   .card {
     width: 21rem;

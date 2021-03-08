@@ -28,7 +28,7 @@ $(document).ready(function(){
        $("#myModal").modal(); 
     }
     else if (selectedRadio==='pick-up'){
-      alert(" Pay a total of Ksh " + totalPricePickup + " and your PickUp order will be processed shortly" );
+      alert("Proceed to the counter to pay and pick up your order" );
     } 
   });
     $("#checkout").click(function(event){
@@ -91,13 +91,24 @@ $(document).ready(function(){
     var totalPrice = new pizza(size, toppingSize, crust); 
     var totalPickup= totalPrice.price();
     var totalPricePickup = totalPickup - 100;
-      var deliveryAddress = $("input#inputAddress").val();
-      var quantity = parseInt( $("input#qty").val());
-      var totalPriceDelivery = totalPickup * quantity
+    var deliveryAddress = $("input#inputAddress").val();
+    var quantity = parseInt( $("input#qty").val());
+    var totalPriceDelivery = totalPickup * quantity
       alert(' your order of '+ quantity +' Pizzas'+ ' will be delivered to '+ deliveryAddress + " and you will pay a total of Ksh  " + totalPriceDelivery);
       $("ul#new-order").append("<li><span class='contact'>" +sizeText+ "," + toppingText +","+crustText+ " ----X " + quantity + 
-        "----------"   +  'Ksh.' +totalPriceDelivery + "</span></li>");
-
-        resetFields();
+        "----------"   +  'Ksh.' +totalPriceDelivery + "</span></li>");        
+        $(".tblcls").append("<tr><td>"+totalPriceDelivery+"</td></tr>"); 
+        var result = [];
+  $('table tr').each(function(){
+  	$('td', this).each(function(index, val){
+    	if(!result[index]) result[index] = 0;
+      result[index] += parseInt($(val).text());
     });
+  });
+  $('table').append('<tr></tr>');
+  $(result).each(function(){
+  	document.getElementById("total").innerHTML ="Total amount is Ksh "+ result;
+  });
+  resetFields();  
+    }); 
 });
