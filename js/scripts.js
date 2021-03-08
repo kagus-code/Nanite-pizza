@@ -22,7 +22,8 @@ function reloadPage(){
 }
 //user logic 
 $(document).ready(function(){
-  $("#myBtn").click(function(){
+  $("#myBtn").click(function(event){
+    event.preventDefault()
     var selectedRadio = $('input[name="inlineRadioOptions"]:checked').val();
     if (selectedRadio==="delivery"){
        $("#myModal").modal(); 
@@ -31,7 +32,9 @@ $(document).ready(function(){
       alert("Proceed to the counter to pay and pick up your order" );
     } 
   });
-    $("#checkout").click(function(event){
+    $("#checkout").submit(function (e){
+      e.preventDefault();
+      $('#myModal').modal('toggle'); 
        var sizeValue= parseInt( $("#size").val());
        var toppingText = $("#topping").val();
        var crustValue= parseInt($("#crust").val());
